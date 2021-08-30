@@ -1,20 +1,21 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ColumnOneComponent } from './layouts/column-one/column-one.component';
+import { HomeComponent } from './layouts/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
-
+import { FooterComponent } from './components/footer/footer.component';
 
 
 @NgModule({
   declarations: [
-    ColumnOneComponent,
-    HeaderComponent
+    HeaderComponent,
+    FooterComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [
-    ColumnOneComponent
+    HomeComponent
   ]
 })
 export class SharedModule { }
