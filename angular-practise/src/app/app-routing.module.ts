@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { ProductListComponent } from './product-list/product-list.component';
+import { ProductComponent } from './product/product.component';
 
 const routes: Routes = [
-  { path: 'product-lists', component: ProductListComponent},
+  { path: 'product', component: ProductComponent },
 ];
 
 @NgModule({
@@ -11,4 +11,4 @@ const routes: Routes = [
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
-export const routingComponents = [ ProductListComponent ]
+export const routingComponents = [ ProductComponent ]
