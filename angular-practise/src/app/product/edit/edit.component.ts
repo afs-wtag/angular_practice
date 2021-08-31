@@ -12,12 +12,22 @@ import { ProductService } from 'src/app/services/product.service';
 export class EditComponent implements OnInit {
   id: number;
   header: string;
+  product: Product = {
+    id:0,
+    name: '',
+    price: 0,
+    quantity: 0
+  };
 
   constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.paramMap.get('id');
     this.header = this.id === 0 ? 'Add product' : 'Edit Product';
+
+    if(this.id != 0){
+      this.product = this.productService.onGetProduct(this.id);
+    }
   }
 
   onSubmit(form: NgForm){
@@ -27,7 +37,13 @@ export class EditComponent implements OnInit {
       price: form.value.price,
       quantity: form.value.quantity,
     }
-    this.productService.onAdd(product);
+
+    if(this.id == 0){
+      this.productService.onAdd(product);
+    }
+    else{
+      this.productService.onUpdate(product);
+    }
     this.router.navigateByUrl('/product');
   }
 }

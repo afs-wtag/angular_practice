@@ -4,22 +4,22 @@
   <form (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group">
       <label for="">Id</label><br>
-      <input type="text" class="form-control" placeholder="Enter id" ngModel name="id" >
+      <input type="text" class="form-control" placeholder="Enter id" [ngModel]="product.id" name="id" >
       <br>
     </div>
     <div class="form-group">
       <label for="">Name</label><br>
-      <input type="text" class="form-control" placeholder="Enter name" ngModel name="name">
+      <input type="text" class="form-control" placeholder="Enter name" [ngModel]="product.name" name="name">
       <br>
     </div>
     <div class="form-group">
       <label for="">Price</label><br>
-      <input type="text" class="form-control" placeholder="Enter price" ngModel name="price">
+      <input type="text" class="form-control" placeholder="Enter price" [ngModel]="product.price" name="price">
       <br>
     </div>
     <div class="form-group">
       <label for="">Quantity</label><br>
-      <input type="text" class="form-control" placeholder="Enter quantity" ngModel name="quantity">
+      <input type="text" class="form-control" placeholder="Enter quantity" [ngModel]="product.quantity" name="quantity">
       <br>
     </div>
 
