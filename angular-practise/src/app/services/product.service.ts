@@ -25,4 +25,14 @@ export class ProductService {
   onGet(){
     return this.products;
   }
+
+  onAdd(product: Product){
+    this.products.push(product);
+  }
+
+  onDelete(id: Number){
+    let product = this.products.find(x=>x, id==id);
+    let index = this.products.indexOf(product,0);
+    this.products.splice(index,1);
+  }
 }

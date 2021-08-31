@@ -1,5 +1,6 @@
 <div class="text-center">
   <h1>Product Lists</h1>
+  <a routerLink="add/0">Add product</a>
 </div>
 <div class = "m-5 text-center">
     <table class="table table-bordered table-hover">
@@ -9,6 +10,7 @@
           <th scope="col">Name</th>
           <th scope="col">Price</th>
           <th scope="col">Quantity</th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
@@ -17,6 +19,8 @@
           <td>{{ product.name }}</td>
           <td>${{ product.price }}</td>
           <td>{{ product.quantity }}</td>
+          <td><a [routerLink]="['edit', product.id]">Edit</a></td>
+          <td><button (click)="onDelete(product.id)">Delete</button></td>
         </tr>
       </tbody>
     </table>

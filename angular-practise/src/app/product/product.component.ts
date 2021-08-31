@@ -20,4 +20,8 @@ export class ProductComponent implements OnInit {
   onSelect(product: Product): void {
     this.selectedProduct = product;
   }
+
+  onDelete(id: Number){
+    this.productService.onDelete(id);
+  }
 }
