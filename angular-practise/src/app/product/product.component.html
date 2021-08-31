@@ -1,7 +1,7 @@
-<div style="text-align: center;">
+<div class="text-center">
   <h1>Product Lists</h1>
 </div>
-<div class = "m-5" style="text-align: center;">
+<div class = "m-5 text-center">
     <table class="table table-bordered table-hover">
       <thead>
         <tr class="table table-dark">
@@ -12,7 +12,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let product of products">
+        <tr *ngFor="let product of products" (click)="onSelect(product)">
           <td>{{ product.id }}</td>
           <td>{{ product.name }}</td>
           <td>${{ product.price }}</td>
@@ -20,4 +20,14 @@
         </tr>
       </tbody>
     </table>
+</div>
+
+<div *ngIf="selectedProduct">
+
+  <h2>{{selectedProduct.name | uppercase}} Details</h2>
+  <div><span>id: </span>{{selectedProduct.id}}</div>
+  <div>
+    <label for="product-name">Product name: </label>
+    <input id="product-name" [(ngModel)]="selectedProduct.name" placeholder="name">
+  </div>
 </div>
