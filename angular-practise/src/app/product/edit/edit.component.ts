@@ -14,7 +14,7 @@ export class EditComponent implements OnInit {
   header: string;
   product: Product = {
     id:0,
-    name: '',
+    name: "",
     price: 0,
     quantity: 0
   };

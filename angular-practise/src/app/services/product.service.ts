@@ -33,7 +33,7 @@ export class ProductService {
   }
 
   onGetProduct(id: Number){
-    return this.products.find(x=>x, id==id);
+    return this.products.find(x=>x.id==id);
   }
 
   onAdd(product: Product){
@@ -41,7 +41,7 @@ export class ProductService {
   }
 
   onDelete(id: Number){
-    let product = this.products.find(x=>x, id==id);
+    let product = this.products.find(x=>x.id==id);
     let index = this.products.indexOf(product,0);
     this.products.splice(index,1);
   }
