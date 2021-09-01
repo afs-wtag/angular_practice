@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { NgForm } from '@angular/forms';
+import { FormControl, NgForm } from '@angular/forms';
+import { FormGroup } from '@angular/forms';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -18,8 +19,11 @@ export class EditComponent implements OnInit {
     price: 0,
     quantity: 0
   };
-
-  constructor(private router: Router, private route: ActivatedRoute, private productService: ProductService) { }
+ 
+  constructor(
+    private router: Router, 
+    private route: ActivatedRoute, 
+    private productService: ProductService) { }
 
   ngOnInit(): void {
     this.id = +this.route.snapshot.paramMap.get('id');
@@ -27,15 +31,30 @@ export class EditComponent implements OnInit {
 
     if(this.id != 0){
       this.product = this.productService.onGetProduct(this.id);
+      this.productForm.setValue({
+        id: this.product.id, 
+        name: this.product.name,
+        price: this.product.price,
+        quantity: this.product.quantity
+      });
     }
+    this.productForm.valueChanges.subscribe(console.log)
   }
 
-  onSubmit(form: NgForm){
+  productForm = new FormGroup({
+    id: new FormControl(''),
+    name: new FormControl(''),
+    price: new FormControl(''),
+    quantity: new FormControl(''),
+  });
+
+  onSubmit(){
+
     let product: Product = {
-      id: form.value.id,
-      name: form.value.name,
-      price: form.value.price,
-      quantity: form.value.quantity,
+      id: this.productForm.value.id,
+      name: this.productForm.value.name,
+      price: this.productForm.value.price,
+      quantity: this.productForm.value.quantity,
     }
 
     if(this.id == 0){

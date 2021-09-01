@@ -1,25 +1,24 @@
-<p>edit works!</p>
 <div class="container mt-5" >
   <h2 style="text-align: center;" >{{ header }}</h2>
-  <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form [formGroup]= "productForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
       <label for="">Id</label><br>
-      <input type="text" class="form-control" placeholder="Enter id" [ngModel]="product.id" name="id" >
+      <input formControlName="id" type="text" class="form-control" placeholder="Enter id">
       <br>
     </div>
     <div class="form-group">
       <label for="">Name</label><br>
-      <input type="text" class="form-control" placeholder="Enter name" [ngModel]="product.name" name="name">
+      <input formControlName="name" type="text" class="form-control" placeholder="Enter name">
       <br>
     </div>
     <div class="form-group">
       <label for="">Price</label><br>
-      <input type="text" class="form-control" placeholder="Enter price" [ngModel]="product.price" name="price">
+      <input formControlName="price" type="text" class="form-control" placeholder="Enter price">
       <br>
     </div>
     <div class="form-group">
       <label for="">Quantity</label><br>
-      <input type="text" class="form-control" placeholder="Enter quantity" [ngModel]="product.quantity" name="quantity">
+      <input formControlName="quantity" type="text" class="form-control" placeholder="Enter quantity">
       <br>
     </div>
 
