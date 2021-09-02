@@ -1,6 +1,6 @@
 <div class="text-center">
   <h1>Product Lists</h1>
-  <a class="btn btn-outline-success" routerLink="add/0">Add product</a>
+  <a class="btn btn-outline-success" routerLink="add/0"><fa-icon [icon]="faPlus"></fa-icon> &nbsp; Add product</a>
 </div>
 <div class = "m-5 text-center">
     <table class="table table-bordered table-hover">
@@ -20,8 +20,8 @@
           <td>${{ product.price }}</td>
           <td>{{ product.quantity }}</td>
           <td>
-          <a class="m-2 btn btn-outline-primary" [routerLink]="['edit', product.id]">Edit</a>
-          <button class="btn btn-outline-danger" (click)="onDelete(product.id)">Delete</button>
+          <a class="m-2 btn btn-outline-primary" [routerLink]="['edit', product.id]"><fa-icon [icon]="faEdit"></fa-icon></a>
+          <button class="btn btn-outline-danger" (click)="onDelete(product.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
           </td>
         </tr>
       </tbody>
