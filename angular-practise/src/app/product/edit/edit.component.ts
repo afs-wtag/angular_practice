@@ -63,6 +63,6 @@ export class EditComponent implements OnInit {
     else{
       this.productService.onUpdate(product);
     }
-    this.router.navigateByUrl('/product');
+    this.router.navigateByUrl('');
   }
 }
