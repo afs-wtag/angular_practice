@@ -8,13 +8,15 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { EditComponent } from './product/edit/edit.component';
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { TemplateComponent } from './test/template/template.component'
 
 @NgModule({
   declarations: [
     AppComponent,
     routingComponents,
     EditComponent,
+    TemplateComponent,
   ],
   imports: [
     BrowserModule,

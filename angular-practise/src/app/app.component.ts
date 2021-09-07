@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-practise';
+
+  showText = false;
+
+  toggleTest(): void{
+    this.showText = !this.showText;
+  }
 }
