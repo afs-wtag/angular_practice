@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import {Cards} from './interfaces/card';
 import {Alerts} from './interfaces/alert';
 
 @Component({
@@ -10,5 +9,4 @@ import {Alerts} from './interfaces/alert';
 export class AppComponent {
   title = 'angular-practise';
   alerts = Alerts;
-  cards = Cards;
 }
