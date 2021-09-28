@@ -1,6 +1,13 @@
 <div class="text-center">
   <h1 class="m-3">Product Lists</h1>
-  <a class="btn btn-outline-success" routerLink="add/0"><fa-icon [icon]="faPlus"></fa-icon> &nbsp; Add product</a>
+
+   <alert
+     title="Carefully insert products"
+     subtitle="Caution"
+     color="alert alert-danger"
+   ></alert>
+
+  <a class="btn btn-outline-success" routerLink="add/0">Add product</a>
 </div>
 <div class = "m-4 text-center">
     <table class="table table-bordered table-hover">
@@ -20,8 +27,8 @@
           <td>${{ product.price }}</td>
           <td>{{ product.quantity }}</td>
           <td>
-          <a class="m-2 btn btn-outline-primary" [routerLink]="['edit', product.id]"><fa-icon [icon]="faEdit"></fa-icon></a>
-          <button class="btn btn-outline-danger" (click)="onDelete(product.id)"><fa-icon [icon]="faTrash"></fa-icon></button>
+          <a class="m-2 btn btn-outline-primary" [routerLink]="['edit', product.id]">Edit</a>
+          <button class="btn btn-outline-danger" (click)="onDelete(product.id)">Delete</button>
           </td>
         </tr>
       </tbody>
@@ -31,7 +38,7 @@
 <div *ngIf="selectedProduct">
   <div class="card">
     <div class="card-body">
-      <h2 class="card-title">{{selectedProduct.name | uppercase}} Details</h2>
+      <h2 class="card-title">{{selectedProduct.name}} Details</h2>
       <div class="card-text">
         <span>id: </span>{{selectedProduct.id}}<br>
         <span>price: </span>{{selectedProduct.price}}<br>

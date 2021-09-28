@@ -1,4 +1,9 @@
 <div class="container mt-5" >
+  <alert
+     title="Carefully insert products"
+     subtitle="Caution"
+     color="alert alert-warning"
+   ></alert>
   <h2 style="text-align: center;" >{{ header }}</h2>
   <form [formGroup]= "productForm" (ngSubmit)="onSubmit()">
     <div class="form-group">
