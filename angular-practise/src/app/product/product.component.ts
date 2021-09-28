@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product.model';
 import { ProductService } from 'src/app/services/product.service';
-//import { faPlus } from '@fortawesome/free-solid-svg-icons';
-// import { faEdit } from '@fortawesome/free-solid-svg-icons';
-// import { faTrash } from '@fortawesome/free-solid-svg-icons';
+import {Alerts} from 'src/app/interfaces/alert';
 
 @Component({
   selector: 'app-product',
@@ -11,11 +9,9 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./product.component.scss']
 })
 export class ProductComponent implements OnInit {
+  alerts = Alerts;
   products: Product[];
   selectedProduct?: Product;
-  //faPlus = faPlus;
-  //faEdit = faEdit;
-  //faTrash = faTrash;
 
   constructor(private productService: ProductService) { }
 

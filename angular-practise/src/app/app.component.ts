@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import {Cards} from './interfaces/card';
+import {Alerts} from './interfaces/alert';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-practise';
+  alerts = Alerts;
+  cards = Cards;
 }
